@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/section2/accounts/pom.xml" />
         <option value="$PROJECT_DIR$/section2/cards/pom.xml" />
+        <option value="$PROJECT_DIR$/section2/loans/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
