@@ -89,7 +89,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>chamal99/loans:s6</image>
+						<image>chamal99/loans:s8</image>
 					</to>
 				</configuration>
 			</plugin>

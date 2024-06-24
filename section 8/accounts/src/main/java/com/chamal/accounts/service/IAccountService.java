@@ -1,7 +1,9 @@
 package com.chamal.accounts.service;
 
 import com.chamal.accounts.dto.CustomerDto;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface IAccountService {
     /**
      *
