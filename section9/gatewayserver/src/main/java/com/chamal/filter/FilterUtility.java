@@ -1,8 +1,8 @@
 package com.chamal.filter;
 
+import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
-
 import org.springframework.http.HttpHeaders;
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class FilterUtility {
     public String getCorrelationId(HttpHeaders requestHeaders) {
         if (requestHeaders.get(CORRELATION_ID) != null) {
             List<String> requestHeaderList = requestHeaders.get(CORRELATION_ID);
-            return requestHeaderList.stream().findFirst().get();
+            return requestHeaderList.stream().findFirst().orElse(null);
         } else {
             return null;
         }
@@ -21,7 +21,9 @@ public class FilterUtility {
 
     public ServerWebExchange setRequestHeader(ServerWebExchange exchange, String name, String value) {
         return exchange.mutate().request(exchange.getRequest().mutate().header(name, value).build()).build();
+
     }
+
 
     public ServerWebExchange setCorrelationId(ServerWebExchange exchange, String correlationId) {
         return this.setRequestHeader(exchange, CORRELATION_ID, correlationId);
